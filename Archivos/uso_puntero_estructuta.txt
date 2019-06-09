@@ -1,0 +1,47 @@
+struct alumno* retornarArrayEstructura();
+struct alumno obtenerAlumno(struct alumno*,int);
+
+int main(){
+//funcion que manipula todo el programa
+//iniciarPrograma();
+
+//obtener todos los alumnos;
+struct alumno* misAlumnos;
+misAlumnos=retornarArrayEstructura();
+for(int i=0;i<2;i++){
+	misAlumnos[i].imprimirDatosAlumno();
+}
+
+//obtener alumno por id:
+struct alumno* misAlumnos;
+struct alumno alumno;
+misAlumnos=obtenenerMatriz();
+alumno=obtenerAlumno(misAlumnos,2);
+alumno.imprimirDatosAlumno();
+
+
+	system("pause>null");
+	return 0;
+}
+
+
+struct alumno* retornarArrayEstructura(){
+	struct alumno alumno1;
+    struct alumno alumno2;
+    static struct alumno misAlumnos[100];
+alumno1.ConstructorAlumno(1,"diego","guzman",26001344,"03/03/2017","06/08/1977","4716-6430","diego@gmail.com",1);
+alumno2.ConstructorAlumno(2,"pablo","guzman",27001344,"03/04/2017","07/12/1980","4716-6430","pablo@gmail.com",1);
+misAlumnos[0]=alumno1;
+misAlumnos[1]=alumno2;
+return misAlumnos;
+}
+
+struct alumno obtenerAlumno(struct alumno* misAlumnos,int id){
+	struct alumno alumno;
+	for(int i=0;i<2;i++){
+		if(misAlumnos[i].getLegajo()==id){
+			alumno=misAlumnos[i];
+		}
+	}
+	return alumno; 
+}
